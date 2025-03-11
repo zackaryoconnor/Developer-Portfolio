@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+    box-sizing: border-box;
+    color: #E3B45E;
+}
+
+body {
+    background-color: #3B413D;
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: "Playfair Display", serif;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 16px 0;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+}
+
+.hero {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    gap: 64px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 6rem;
+}
+
+.hero img {
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50% 50% 8px 8px;
+}
+
+section {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.projects-container {
+    display: flex;
+    gap: 76px;
+}
+
+.project img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: .5px solid black;
+    border-radius: 8px;
+}
+
+.contact-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 200px;
+    gap: 24px;
+}
+
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.input-fields input {
+    width: 400px;
+    height: 54px;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 16px;
+}
+
+.contact-me-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-me button {
+    width: 200px;
+    height: 54px;
+    border-radius: 8px;
+    background-color: white;
+    color: #272524;
+    font-size: 14px;
+}
