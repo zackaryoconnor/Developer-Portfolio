@@ -13,8 +13,8 @@
     <div class="navbar">
         <ul>
             <li><a href="#">About Me</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact Me</a></li>
+            <li><a href="#projects-section">Work</a></li>
+            <li><a href="#contact-me">Contact Me</a></li>
         </ul>
     </div>
 
@@ -22,7 +22,7 @@
 
 <body>
 
-    <section class="hero">
+    <section class="hero hidden">
         <div class="hero-container">
             <div class="hero-left">
                 <h1>Zack O'Connor</h1>
@@ -35,41 +35,53 @@
         </div>
     </section>
 
-    <section class="projects-section">
+    <section class="projects-section hidden" id="projects-section">
         <div class="websites">
             <h2>Websites</h2>
             <div class="projects-container">
-                <div class="project">
+                <div class="project hidden">
                     <img src="Assets/Screen Shot 2025-03-10 at 5.31.43 PM.png" alt="project description">
                 </div>
 
-                <div class="project">
+                <div class="project hidden">
                     <img src="Assets/Screen Shot 2025-03-10 at 5.31.43 PM.png" alt="project description">
                 </div>
 
-                <div class="project">
+                <div class="project hidden">
                     <img src="Assets/Screen Shot 2025-03-10 at 5.31.43 PM.png" alt="project description">
                 </div>
             </div>
         </div>
 
 
+        <!---------------- modal ---------------->
+        <div class="modal">
+            <div class="modal-container">
+                <img src="Assets/Screen Shot 2025-03-10 at 5.31.43 PM.png" alt="">
+                <h1>Blackjack</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet reiciendis sapiente, commodi eos excepturi velit, vitae, dicta accusantium magnam corrupti incidunt ipsa mollitia est explicabo corporis nemo facilis. Reiciendis autem quo commodi, ipsam excepturi sit saepe?</p>
+                <button class="close-modal-button">Close</button>
+            </div>
+        </div>
+        <!---------------- modal ---------------->
+
+
         <div class="apps">
             <h2>Apps</h2>
             <div class="projects-container">
-                <div class="project">
+                <div class="project hidden">
                     <img src="Assets/Screen Shot 2025-03-10 at 5.31.43 PM.png" alt="project description">
                 </div>
 
-                <div class="project">
+                <div class="project hidden">
                     <img src="Assets/Screen Shot 2025-03-10 at 5.31.43 PM.png" alt="project description">
                 </div>
 
-                <div class="project">
+                <div class="project hidden">
                     <img src="Assets/Screen Shot 2025-03-10 at 5.31.43 PM.png" alt="project description">
                 </div>
 
-                <div class="project">
+                <div class="project hidden">
                     <img src="Assets/Screen Shot 2025-03-10 at 5.31.43 PM.png" alt="project description">
                 </div>
             </div>
@@ -77,16 +89,16 @@
 
     </section>
 
-    <section class="contact-me">
+    <section class="contact-me hidden" id="contact-me">
         <h2>Contact Me</h2>
 
         <div class="contact-me-container">
             <div class="input-fields">
-                <input type="text" name="name" placeholder="Name"/>
-                <input type="email" name="email" placeholder="Email"/>
+                <input type="text" id="name" name="name" placeholder="Name"/>
+                <input type="email" id="email" name="email" placeholder="Email"/>
                 <button class="send-button">Send</button>
             </div>
-            <button class="social-buttons">Github</button>
+            <a class="github-button" href="https://github.com/zackaryoconnor?tab=repositories" target="_blank">Github</a>
         </div>
 
     </section>
