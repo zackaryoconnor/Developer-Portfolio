@@ -22,8 +22,9 @@ const projectData = {
 };
 
 
+
+
 const hiddenElements = document.querySelectorAll(`.hidden`);
-const projectElements = document.querySelectorAll(`.project`);
 const projectImageElement = document.querySelector(`.project-image`);
 const modalElement = document.querySelector(`.modal`);
 const closeModalButton = document.querySelector(`.close-modal-button`);
@@ -36,7 +37,6 @@ const githubButton = document.querySelector(`.social-buttons`);
 // User interaction 1: animation on scroll
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
             entry.target.classList.add(`show`);
         } else {
@@ -54,22 +54,40 @@ hiddenElements.forEach((element) => observer.observe(element));
 const updateProjectSection = (classSection, projects) => {
     const projectsContainer = document.querySelector(`.${classSection} .projects-container`);
 
-    projects.forEach(project => {
+    projects.forEach((project) => {
         const newProjectElement = document.createElement(`div`);
         newProjectElement.classList.add(`project`);
 
         newProjectElement.innerHTML = `<img class="project-image" src="${project.imagePath}" alt="Image of really cool project!">`;
         projectsContainer.appendChild(newProjectElement);
+
+        newProjectElement.addEventListener(`click`, () => {
+            displayModal(project);
+        })
     })
 }
 
-updateProjectSection(`websites`, projectData.websites);
-updateProjectSection(`apps`, projectData.apps);
+
+
+
+// update modal with data
+const displayModal = (project) => {
+    const modalImageElement = document.querySelector(`.modal-image`);
+    const modalTitleElement = document.querySelector(`.modal-title`);
+    const modalDescriptionElement = document.querySelector(`.modal-description`);
+
+    modalImageElement.src = project.imagePath;
+    modalTitleElement.textContent = project.title;
+    modalDescriptionElement.textContent = project.description;
+
+    modalElement.classList.add(`show`);
+}
 
 
 
 
 // User interaction 2 & 3: mouse hover animation and display modal on click
+const projectElements = document.querySelectorAll(`.project`);
 projectElements.forEach(project => {
     project.addEventListener(`mouseover`, () => {
         project.style.transform = `scale(1.2)`;
@@ -81,13 +99,21 @@ projectElements.forEach(project => {
     })
 
     project.addEventListener(`click`, () => {
-        modalElement.classList.add(`show`);
+        displayModal()        
     })
 })
 
-closeModalButton.addEventListener(`click`, () => {
+
+const dismissModal = () => {
     modalElement.classList.remove(`show`);
-});
+}
+
+
+closeModalButton.addEventListener(`click`, dismissModal);
+
+
+updateProjectSection(`websites`, projectData.websites);
+updateProjectSection(`apps`, projectData.apps);
 
 
 
