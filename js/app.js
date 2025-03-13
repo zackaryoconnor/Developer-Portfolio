@@ -8,6 +8,14 @@ const projectData = {
             title: "Tamagotchi",
             imagePath: "Assets/Screen Shot 2025-03-12 at 3.42.30 PM.png",
             description: "this is a tamagotchi game."
+        }, {
+            title: "Tamagotchi",
+            imagePath: "Assets/Screen Shot 2025-03-12 at 3.42.30 PM.png",
+            description: "this is a tamagotchi game."
+        }, {
+            title: "Tamagotchi",
+            imagePath: "Assets/Screen Shot 2025-03-12 at 3.42.30 PM.png",
+            description: "this is a tamagotchi game.asfasdfasdfasdfasdfasdfasfasdfasdffasdfljhaldfjkhasdhflakjshdflkjahsdlfahsldfhaskdjhflkasjdhflkjsadhflksjhdflksjf"
         }
     ],
 

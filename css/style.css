@@ -14,6 +14,7 @@
     font-family: "Noto Sans", sans-serif;
     box-sizing: border-box;
     color: var(--secondary-color);
+    font-size: 1.2rem;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
 h1, h2 {
     font-family: "Playfair Display", serif;
     margin-bottom: 32px;
+    font-size: 2rem;
 }
 
 button {
@@ -78,7 +80,6 @@ a:hover {
 .hero-container {
     display: flex;
     gap: 64px;
-    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     align-items: center;
@@ -86,14 +87,13 @@ a:hover {
 }
 
 .hero h1 {
-    font-size: 6rem;
+    font-size: 5rem;
 }
 
 .hero img {
-    width: 350px;
-    height: 400px;
+    width: 400px;
+    height: 500px;
     object-fit: cover;
-    object-position: center;
     border-radius: 50% 50% 8px 8px;
     border: 4px solid var(--secondary-color);
 }
@@ -104,22 +104,24 @@ section {
     text-align: center;
 }
 
-.websites {
-    margin-bottom: 124px;
-}
-
 .projects-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 60vh;
+    min-height: 80vh;
+    padding: 60px 20px;
 }
 
 .projects-container {
-    display: flex;
-    gap: 76px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(400px, 1fr));
+    gap: 32px;
+}
+
+.websites {
+    margin-bottom: 124px;
 }
 
 
@@ -154,14 +156,13 @@ section {
 }
 
 .project img {
-    width: 250px;
-    height: 250px;
+    width: 450px;
+    height: 350px;
     object-fit: cover;
     border-radius: 8px;
+    overflow: hidden;
 }
 
-
-/* -------------- modal -------------- */
 .modal {
     width: 100vw;
     height: 100vh;
@@ -213,8 +214,6 @@ section {
     border-radius: 16px;
     padding: 32px 120px;
 }
-/* -------------- modal -------------- */
-
 
 .contact-me {
     display: flex;
@@ -267,3 +266,106 @@ section {
     align-items: center;
     justify-content: center;
 }
+
+  
+  @media (max-width: 1400px) {
+      * {
+          font-size: 1.1rem;
+      }
+      
+      .projects-container {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 32px
+      }
+  }
+ 
+  @media (max-width: 1024px) {
+      .hero-container {
+          gap: 32px;
+      }
+
+      .hero h1 {
+          font-size: 4rem;
+      }
+
+      .projects-container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+      }
+
+      .modal-container {
+          width: 70vw;
+          padding: 24px 60px;
+      }
+  }
+
+  @media (max-width: 768px) {
+      .hero {
+          min-height: 100vh;
+          padding: 60px 20px;
+      }
+
+      .hero-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 48px;
+      }
+
+      .hero h1 {
+          font-size: 3.5rem;
+      }
+
+      .navbar ul {
+          gap: 40px;
+      }
+
+      .projects-container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+      }
+
+      .project img {
+          width: 100%;
+          max-width: 450px;
+          height: auto;
+      }
+
+      .modal-container {
+          width: 90vw;
+          padding: 20px;
+          height: auto;
+          max-height: 90vh;
+          overflow: hidden;
+      }
+
+      .modal img {
+          width: 100%;
+          max-width: 500px;
+          height: auto;
+      }
+  }
+  
+  @media (max-width: 640px) {
+      .hero h1 {
+          font-size: 3rem;
+      }
+
+      .input-fields input {
+          max-width: 300px;
+      }
+
+      .contact-me {
+          margin: 200px 0 100px 0;
+      }
+
+  }
+  
+  @media (max-width: 475px) {
+      * {
+          font-size: 1rem;
+      }
+
+      .hero h1 {
+          font-size: 2.5rem;
+      }
+  }
