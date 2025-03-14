@@ -17,6 +17,10 @@
     font-size: 1.2rem;
 }
 
+html {
+    color-scheme: dark light;
+}
+
 body {
     background-color: var(--primary-color);
     margin: 0; 
@@ -52,6 +56,32 @@ button {
     margin: 0 auto;
     padding: 0 20px;
 }
+
+#light-dark-mode-toggle {
+    appearance: none;
+    height: 36px;
+    width: 150px;
+    background-color: var(--tertiary-color);
+    position: absolute;
+    left: 32px;
+    border-radius: 20px;
+    color: white;
+    padding: 8px;
+}
+
+.light-mode {
+    background-color: rgb(240, 240, 240);
+}
+
+.light-mode button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.light-mode .github-button {
+    background-color: var(--primary-color);
+}
+
 
 .navbar ul {
     list-style-type: none;
@@ -109,21 +139,46 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     min-height: 80vh;
     padding: 60px 20px;
 }
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 100%;
+    max-width: 1200px;
     gap: 32px;
+    padding: 0 20px;
 }
 
 .websites {
     margin-bottom: 124px;
 }
 
+.project {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.project img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+}
+
+.project:hover img {
+    transform: scale(1.02);
+}
+
+.project:hover {
+    box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
 
 .hidden .project {
     transform: translateX(-100%);
@@ -148,19 +203,6 @@ section {
 
 .project:nth-child(5) {
     transition-delay: 800ms;
-}
-
-.project:hover {
-    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-}
-
-.project img {
-    width: 450px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 8px;
-    overflow: hidden;
 }
 
 .modal {
@@ -189,6 +231,9 @@ section {
     height: 500px;
     border-radius: 8px;
     margin-bottom: 32px;
+    object-fit: contain;
+    overflow: hidden;
+    border: 1px solid var(--tertiary-color)
 }
 
 .modal p {
@@ -213,6 +258,19 @@ section {
     justify-content: center;
     border-radius: 16px;
     padding: 32px 120px;
+}
+
+.light-mode .modal-container {
+    background-color: white;
+}
+
+.light-mode .modal p {
+    color: var(--tertiary-color);
+}
+
+.light-mode .close-modal-button {
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .contact-me {
@@ -267,31 +325,30 @@ section {
     justify-content: center;
 }
 
-  
-  @media (max-width: 1400px) {
-      * {
-          font-size: 1.1rem;
-      }
-      
-      .projects-container {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 32px
-      }
-  }
- 
-  @media (max-width: 1024px) {
-      .hero-container {
-          gap: 32px;
-      }
+@media (max-width: 1400px) {
+    .projects-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-container {
+        gap: 32px;
+    }
 
       .hero h1 {
           font-size: 4rem;
       }
 
-      .projects-container {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 30px;
-      }
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .project img {
+        height: 300px;
+    }
 
       .modal-container {
           width: 70vw;
@@ -319,16 +376,15 @@ section {
           gap: 40px;
       }
 
-      .projects-container {
-          grid-template-columns: 1fr;
-          gap: 40px;
-      }
+    .projects-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 32px;
+        padding: 0 16px;
+    }
 
-      .project img {
-          width: 100%;
-          max-width: 450px;
-          height: auto;
-      }
+    .project img {
+        height: 250px;
+    }
 
       .modal-container {
           width: 90vw;
@@ -354,18 +410,25 @@ section {
           max-width: 300px;
       }
 
-      .contact-me {
-          margin: 200px 0 100px 0;
-      }
+    .contact-me {
+        margin: 200px 0 100px 0;
+    }
+}
 
-  }
-  
-  @media (max-width: 475px) {
-      * {
-          font-size: 1rem;
-      }
+@media (max-width: 475px) {
+    * {
+        font-size: 1rem;
+    }
 
-      .hero h1 {
-          font-size: 2.5rem;
-      }
-  }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .projects-container {
+        gap: 24px;
+    }
+
+    .project img {
+        height: 200px;
+    }
+}
